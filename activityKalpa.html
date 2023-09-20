@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- This is body of head element -->
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>activity2</title>
+        
+        <!--    Q1    -->
+        <!-- Also <base> and <script> tag is used in head element  -->
+
+
+        <!--    Q2    -->
+        <!-- 3 ways to style document- inline,internal and external  
+            cascading order- inline > internal > external
+        -->
+        <style>
+
+            /*   Q3   CSS selectors */
+            /*
+                    Simple : used for id(#),class(.)
+                    Combinator  :used for all siblings(~),descendant tag(space),adjacent sibling selector(+), child selector(>)
+                    Pseudo-Class : used for pseudo state, like :hover,:active,:link,:visited
+                    Pseudo-Elements :  used for adding pseudo element like after an element(::after/::before), ::firstline,::firstletter, etc. 
+                    Attribute Selectors : used for attributes like target,name,type...
+             */
+
+            hr{
+            /* 
+                This border style is applied to all the hr tags in this page. 
+                As per cascading order internal style has less priority than inline and more priority than external css.
+            */
+                border:1px solid grey;
+           }
+           
+           h1,h3,p,h2{
+                text-align: center;
+            }
+            
+            .cat1{
+                display: flex;
+                flex-direction: row;
+            }
+
+            [title~="link"]{
+                text-decoration: none;
+                
+            }
+
+            .elmnt::first-letter{
+                font-weight: bolder;
+                color: darkslateblue;
+                font-size:x-large;
+            } 
+
+
+        </style>
+    </head>
+    <body>
+        <!-- This is body of body element -->
+        <h1>BOOKS BY CATEGORY</h1>
+        <h3>Select books from below recommended categories...</h3>
+        <br>
+        <!--         
+            This border style is applied to only this hr tag . 
+            As per cascading order inline style has highest priority than external or internal css.
+         -->
+        <hr style="border:1px solid red;">
+        <br>
+        <h2>Categories Of Books</h2>
+        <p class="elmnt" style="padding:5px 20px;">Category is a broad term referring to general aspects of the book's content and audience, 
+            such as fiction, non-fiction, children's, or YA books. Genre is a type of sub-category which 
+            tells you more precisely about the book's content, examples being <a href="https://en.wikipedia.org/wiki/Science_fiction">science fiction</a>,
+            <a href="https://www.goodreads.com/shelf/show/crime"> crime</a>, <a href="https://fivebooks.com/category/history/"> history</a>, memoir, and so on.</p>
+
+        <div class="block">
+            <div class="cat">
+                <h4>Business</h4>
+                <hr>
+                <div class="cat1">
+                    <a href="" title="link"><h5>Business </h5></a>
+                    <a href=""><h5>Startup</h5></a>
+                    <a href="" title="link"><h5>Leadership</h5></a>
+                    <a href=""><h5>Product Management</h5></a>
+                    <a href="" title="link"><h5>Growth</h5></a>
+                    <a href=""><h5>Marketing</h5></a>
+                </div>
+                
+            </div>
+            <div class="cat">
+                <h4>Personal Development</h4>
+                <hr>
+                <div class="cat1">
+                    <a href="" title="link"><h5>Decision Making and Problem Solving</h5></a>
+                    <a href=""><h5>Success</h5></a>
+                    <a href="" title="link"><h5>Career Development</h5></a>
+                    <a href=""><h5>Happiness</h5></a>
+                    <a href="" title="link"><h5>Interpersonal and Social Skills</h5></a>
+                    <a href=""><h5>Productivity</h5></a>
+                </div>
+
+                
+            </div>
+            <div class="cat">
+                <h4>Entertaintment</h4>
+                <hr>
+                <div class="cat1">
+                    <a href="" title="link"><h5>Music Creation</h5></a>
+                    <a href=""><h5>TV</h5></a>
+                    <a href="" title="link"><h5>Theater</h5></a>
+                    <a href=""><h5>Movies and Cinema</h5></a>
+                    <a href="" title="link"><h5>Music</h5></a>
+                    <a href=""><h5>Documentries</h5></a>
+                </div>
+
+                
+            </div>
+        </div>
+        <p>There are many other categories</p>
+        <p>(science,fiction,money etc...)</p>
+        <a href="#"><button type="button">More Books</button></a>
+        <br><br>
+        <p id="jsTrial"></p>
+        <p id="jsloop"></p>
+        <p id="jsString"></p>
+
+
+
+        <script>
+
+            // Q4  Array
+            const arr1=[6,3,7,1,5];
+            const arr2= new Array("abc","def","ghi","jkl");
+            console.log("We have 2 arrays:");
+            console.log(arr1);
+            console.log(arr2);
+            console.log("Replacing 1 with 4 in array 1 we get ,");
+            arr1[3]=4;
+            console.log(arr1);
+            //TO RECOGNIZE AN ARRAY 
+            console.log("Type of array 1 is "+typeof(arr1)+" type of array 2 is "+ typeof(arr2));
+            console.log(Array.isArray(arr2));
+            console.log(arr1 instanceof Array);
+
+            // TO DISPLAY THE ARRAYS IN BROWSER
+            document.getElementById("jsTrial").innerHTML=arr1;
+
+            // Q5 SIZE,ADDING ELEMENTS AND ACCESSING LAST AND FIRST ELEMENTS OF AN ARRAY
+            console.log(arr1.length+" is size of array 1");
+            console.log(arr2.length+" is size of array 2");
+
+            console.log(arr1[0]+" is the first element of array 1");
+            console.log(arr1[arr1.length-1]+" is the last elemnet of array 1");
+
+            console.log("Adding 'mno' element to array 2 we get,");
+            arr2.push("mno");
+            console.log(arr2);
+            
+            // Q6 ADDING NEW ELEMENTS TO AN ARRAY
+            console.log("Adding new element using push method");
+            arr1.push(9);
+            console.log(arr1);
+
+            console.log("Adding new element using length property");
+            arr1[arr1.length]=8;
+            console.log(arr1);
+
+            console.log("Adding new element at first index using unshift method");
+            arr1.unshift(6);
+            console.log(arr1);
+
+            // Q7 DELETING ELEMENTS OF AN ARRAY
+            console.log("Deleting an element using delete property");
+            delete arr1[arr1.length-1];
+            console.log(arr1);
+
+            console.log("Deleting an element using pop method");
+            arr1.pop();
+            console.log(arr1);
+
+            console.log("Deleting first element using shift method ");
+            arr1.shift()
+            console.log(arr1);
+
+            
+
+            // Q8 ITERATING THROUGH AN ARRAY TO DISPLAY INDEXES OR ELEMENTS  OF THE ARRAY
+            console.log("Iterating using FOR loop");
+            for (let i=0; i<arr2.length; i++){
+            console.log(arr1[i]);
+            }
+
+            console.log("Iterating using foreach function");
+            arr1.forEach(function(value,index) {
+                console.log("index: "+index + "  value: "+value);
+            });
+
+            console.log("Iterating using map method");
+            const arrMap = arr1.map(func1);
+            console.log(arrMap);
+            function func1(value) {
+            return value;
+            }
+
+            console.log("Iterating using flatmap method");
+            const arrFlatMap = arr1.flatMap(func2);
+            console.log(arrFlatMap);
+            function func2(value,index) {
+            return value ;
+            }
+
+            console.log("Iterating using filter method");
+            const arrfilter = arr1.filter(func3);
+            console.log(arrfilter);
+            function func3(value,index) {
+            return value>6;
+            }
+
+            console.log("Iterating using reduce method");
+            const arrReduce = arr1.reduce(func4);
+            console.log(arrReduce);
+            function func4(total,value,index) {
+            return total+value;
+            }
+
+            // Q9 and Q10 ITERATING THROUGH AN ARRAY TO FIND INDEXES OR ELEMENTS  OF THE ARRAY WHICH PASSES THE TESTS
+
+            console.log("Iterating using index of method");
+            const arrIndexof = arr1.indexOf(7)+1;
+            console.log(arrIndexof);
+            
+            console.log("Iterating using find method");
+            const arrfind = arr1.find(func5);
+            console.log(arrfind);
+            function func5(value,index) {
+            return value>6;
+            }
+
+            console.log("Iterating using findIndex method");
+            const arrfindindex = arr1.findIndex(func5);
+            console.log(arrfindindex);
+            function func5(value,index) {
+            return value>6;
+            }
+
+
+            console.log("Iterating using includes method to find if 'ghi' is present in array 2");
+            const arrincludes = arr2.includes("ghi");
+            console.log(arrincludes);
+            //OTHERS ARE EVERY(),SOME()
+
+            // Q11  METHODS TO ACCESS LAST ELEMENT, PART OF ARRAY
+            // 1-arr1[arr1.length-1]
+            // part of arrays
+            // 1-at()
+
+
+            // Q12 METHODS TO COMBINE ARRAYS
+            // 1-concat
+            // 2-spread operator
+            // 3-for
+            // 4-merge
+            // 5-pushing array2 to array1
+
+
+
+            //Q 13)sorting number array
+            arr1Sort=arr1.sort();
+            console.log(arr1Sort);
+            console.log(arr1Sort.reverse());
+
+            arrObject=[{"name":"Teli","Id":4},{"name":"Kalpa","Id":9},{"name":"Nisha","Id":12},{"name":"Rita","Id":2}];
+
+            arrObjectSort=arrObject.sort(func6);
+            console.log(arrObjectSort);
+
+            function func6(a,b){
+                if(a.name > b.name)
+                {
+                    return -1;
+                }
+                if(a.name < b.name)
+                {
+                    return 1;
+                }
+                return 0;
+            }
+            
+
+            // Q14
+            arr4=[1,2,[3,4],[5,[6,7]]];
+            console.log(arr4.flat(3));
+
+            //Q15
+            arr5=[1,2,3,4,5];
+            arr5[arr5.length-1]=arr5[0];
+            console.log(arr5)
+
+
+            //Q16
+            arr6=["It's a sunny day","I want ice-cream"];
+            const str=arr6.join(" ");
+            
+            console.log(str.split(" "));
+
+            //Q17
+            arr7=["It", "sunny", "day","I", "want", "icecream"];
+            const string=arr7.toString();
+            console.log(string);
+            //conversion of array to string in browser
+            document.getElementById("jsString").innerHTML = arr7;
+
+            //conversion of string to array
+            console.log(string.split(","));
+
+
+
+        </script>
+    </body>
+</html>

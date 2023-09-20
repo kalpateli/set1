@@ -1,0 +1,86 @@
+*{
+    margin-left:20px;
+    margin-right:20px;
+    padding:0;
+
+}
+
+hr{
+    /* 
+        This border style is applied to all the hr tags reffering to this css page. 
+        As per cascading order external style has least priority than inline or internal css.
+    */
+    border:1px solid green;
+   }
+
+   
+button{
+    font-weight:bold;
+    margin-left: 45%;
+    border:none;
+    font-size: medium;
+    border-radius: 10px;
+    padding:15px;
+    text-decoration: none;
+    background-color: sandybrown;
+    color: white;
+}
+
+button:hover{
+    background-color: rgb(233, 138, 55);
+    color: white;
+    cursor: pointer;
+}
+
+
+.block{
+    /* This is a simple selector */
+    background-color: lightgrey;
+    margin: auto;
+    width:80%;
+    padding: 20px;
+}
+
+.block h4{
+    /* This is a combinators selector (descendant selector)  */
+}
+
+.block > div{
+    background-color: white;
+    margin: auto;
+    width:78%;
+    padding: 10px;
+    margin-top:5px;
+    margin-bottom:10px;
+}
+
+div ~ p{
+    font: 20px;
+    color: darkolivegreen;
+}
+
+h4 + hr{
+    border:1px solid blue;
+   }
+
+   
+a{
+    text-decoration: none;
+}
+   
+
+a:visited{
+    color: black;
+    padding: 0;
+}
+
+a:hover{
+    text-decoration: none;
+    color: indigo;
+}
+
+a:active{
+    text-decoration: none;
+    color: rgb(216, 15, 15);
+    padding: 0;
+}
